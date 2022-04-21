@@ -3,8 +3,9 @@ import ReactDom from "react-dom";
 
 //CSS
 import "./style/index.css";
-//
+// importa data
 import { data } from "./books";
+// import default component Book
 import Book from "./Book";
 
 function BookList() {
