@@ -45,4 +45,8 @@ body {
     font-size: 0.75rem;
     margin-top: 0.25rem;
   }
+  .book p {
+    margin-top: 45px;
+    color: blue;
+  }
 }

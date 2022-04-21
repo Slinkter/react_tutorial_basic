@@ -4,17 +4,20 @@ import ReactDom from "react-dom";
 //CSS
 import "./style/index.css";
 //
-const firstBook = {
-  title: " Atomic Habits",
-  author: " Amelia Hepworth",
-  img: "https://images-na.ssl-images-amazon.com/images/I/51-uspgqWIL._SX329_BO1,204,203,200_.jpg",
-};
 
-const secondBook = {
-  title: " How to Win Friends & Influence People",
-  author: "Dale Carnegie",
-  img: "https://images-na.ssl-images-amazon.com/images/I/41C9YOYkkOL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
-};
+const arrayBooks = [
+  {
+    title: " Atomic Habits",
+    author: " Amelia Hepworth",
+    img: "https://images-na.ssl-images-amazon.com/images/I/51-uspgqWIL._SX329_BO1,204,203,200_.jpg",
+  },
+
+  {
+    title: " How to Win Friends & Influence People",
+    author: "Dale Carnegie",
+    img: "https://images-na.ssl-images-amazon.com/images/I/41C9YOYkkOL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
+  },
+];
 
 function BookList() {
   return (
@@ -23,7 +26,8 @@ function BookList() {
         img={firstBook.img}
         title={firstBook.title}
         author={firstBook.author}
-      />
+      ></Book>
+
       <Book
         img={secondBook.img}
         title={secondBook.title}
@@ -38,19 +42,19 @@ function BookList() {
   );
 }
 
-const Book = (props) => {
-  console.log(props);
+const Book = ({ img, title, author }) => {
   return (
     <article className="book">
       <img
         style={{
-          width: "100%",
+          width: "80%",
+          objectFit: "cover",
         }}
-        src={props.img}
+        src={img}
         alt=""
       />
-      <h1> {props.title} </h1>
-      <h4> {props.author} </h4>
+      <h1> {title} </h1>
+      <h4> {author} </h4>
     </article>
   );
 };
