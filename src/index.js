@@ -1,17 +1,52 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDom from "react-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+//CSS
+import "./style/index.css";
+//
+const firstBook = {
+  title: " Atomic Habits",
+  author: " Amelia Hepworth",
+  img: "https://images-na.ssl-images-amazon.com/images/I/51-uspgqWIL._SX329_BO1,204,203,200_.jpg",
+};
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+function BookList() {
+  return (
+    <section className="booklist">
+      <Book
+        img={firstBook.img}
+        title={firstBook.title}
+        author={firstBook.author}
+      />
+      <Book
+        img={firstBook.img}
+        title={firstBook.title}
+        author={firstBook.author}
+      />
+      <Book
+        img={firstBook.img}
+        title={firstBook.title}
+        author={firstBook.author}
+      />
+    </section>
+  );
+}
+
+const Book = (props) => {
+  console.log(props);
+  return (
+    <article className="book">
+      <img
+        style={{
+          width: "100%",
+        }}
+        src={props.img}
+        alt=""
+      />
+      <h1> {props.title} </h1>
+      <h4> {props.author} </h4>
+    </article>
+  );
+};
+
+ReactDom.render(<BookList />, document.getElementById("root"));
